@@ -1,19 +1,18 @@
 <?php
 session_start();
-$secure_id = $_SESSION['secure_id'];
 if (isset($_POST['submit_post'])) {
   
   // ownership proof address 
-  $secure_id = $_SESSION['secure_id'];
+  $secure_id = $_SESSION['---'];
   // ---------------------------------
   
-    $sql = "SELECT * FROM users WHERE secure_id = '$secure_id'";
+    $sql = "SELECT * FROM --- WHERE --- = '$secure_id'";
       $rs = mysqli_query($dbconn, $sql);
         $fetchRow = mysqli_fetch_assoc($rs);
-          $user = $fetchRow['uname'];
-            $status = $fetchRow['status'];
-              $post_content_orig = mysqli_real_escape_string($dbconn, $_POST['post_content']);
-                $post_type = mysqli_real_escape_string($dbconn, $_POST['c_type']);
+          $user = $fetchRow['---'];
+            $status = $fetchRow['---'];
+              $post_content_orig = mysqli_real_escape_string($dbconn, $_POST['---']);
+                $post_type = mysqli_real_escape_string($dbconn, $_POST['---']);
                   $post_content_x1 = preg_replace("/[']/","‘",$post_content_orig);
                     $post_content = preg_replace("/[<]/","&lt",$post_content_x1);
 
@@ -163,7 +162,7 @@ if (isset($_POST['submit_post'])) {
   $id_gener1 = bin2hex(random_bytes(4));
   $id_gener2 = bin2hex(random_bytes(1));
   $id_gener = "$id_gener1$id_gener2";
-  $query = "INSERT INTO post_data (id, content, post_date, post_date_two, file, poster, posted_by, c_type, user_id)
+  $query = "INSERT INTO --- (---, ---, ---, ---, ---, ---, ---, ---, ---)
     VALUES('$id_gener', '$post_content', '$get_date', '$get_date_two', '$target_file', '$dest_img', '$user', '$post_type', '$secure_id' )";
     mysqli_query($dbconn, $query);
   
