@@ -14,7 +14,7 @@ $secure_id = $_SESSION['---'];
     exit;
   }
   // get data from post, get how many likes are there
-  $sql = "SELECT likes FROM --- WHERE --- ='$is_id'";
+  $sql = "SELECT --- FROM --- WHERE --- ='$is_id'";
     $results = mysqli_query($dbconn, $sql);
       $current_likes = mysqli_fetch_assoc($results)['---'];
         // get data from likes history
