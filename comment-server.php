@@ -1,5 +1,3 @@
-<?php include "dbconn.php" ?>
-
 <?php
 session_start();
 
